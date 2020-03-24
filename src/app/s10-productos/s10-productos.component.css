@@ -1,0 +1,25 @@
+.form-group {
+  padding: 10px;
+}
+
+.producto-container {
+  display: flex !important;
+  border-bottom: 1px solid #333333;
+}
+
+.producto-image-container, .producto-image-container img {
+  width: 100px;
+  height: 100px
+}
+
+.producto-desc-container {
+  padding: 10px;
+}
+
+.producto-desc-container * {
+  margin: 0px;
+}
+
+.resaltar, #no-resultado {
+  background-color: #f59f9f;
+}

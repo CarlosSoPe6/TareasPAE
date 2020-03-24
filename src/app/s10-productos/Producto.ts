@@ -13,6 +13,6 @@ export class Producto {
     this.descripcion = descripcion;
     this.precio = precio;
     this.existencia = existencia;
-    this.imagen = `https://picsum.photos/${uid}/1/100/100`;
+    this.imagen = `https://i.picsum.photos/id/${uid}/100/100.jpg`;
   }
 }

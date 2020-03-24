@@ -1,6 +1,6 @@
 <div class="form-group">
   <input type="text" name="" id="" [(ngModel)]="busqueda">
-  <button (click)="onBusqueda">Buscar</button>
+  <button (click)="onBusqueda()">Buscar</button>
   <div *ngIf="busqueda.length > 0">
     <small>Busqueda: {{busqueda}}</small>
   </div>
@@ -14,22 +14,28 @@
   <input type="checkbox" name="" id="resaltar" (click)="onResaltar()">
   <label for="resaltar">Resaltar</label>
 </div>
-<div *ngIf="busquedaProductos.length > 0">
+<div>
+  <div *ngIf="busquedaProductos.length > 0">
   <div *ngFor="let producto of busquedaProductos">
-    <div class="producto-container">
+    <div class="producto-container" [class.resaltar]="resaltar && producto.existencia > 3">
       <div class="producto-image-container">
         <img [src]="producto.imagen">
       </div>
-      <div class="producto-desc-container">
+      <div class="producto-desc-container" >
         <strong>{{producto.nombre}}</strong>
+        <br>
         <p>Precio (MXN) ${{producto.precio}}</p>
+        <br>
         <p>Marca: {{producto.marca}}</p>
+        <br>
         <small>Descripción: {{producto.descripcion}}</small>
+        <br>
         <small>Existencia: {{producto.existencia}}</small>
       </div>
     </div>
   </div>
 </div>
-<div *ngIf="busquedaProductos.length == 0">
+</div>
+<div id="no-resultado" *ngIf="busquedaProductos.length == 0">
   No hay resultados.
 </div>

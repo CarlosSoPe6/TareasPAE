@@ -16,10 +16,20 @@ export class S10ProductosComponent implements OnInit {
   resaltar: boolean;
 
   constructor() {
+    console.log("constructor");
     this.busquedaProductos = [];
     this.productos = [
-
+      new Producto(1, "Impresora", "Epson", "Impresora de tanque de tinta", 1000, 5),
+      new Producto(2, "Computadora", "DELL", "DELL XPS Ubuntu developer", 15000, 2),
+      new Producto(3, "Televisión", "LG", "Televisión de 24 pulgadas", 999, 3),
+      new Producto(4, "Cartucho de tinta", "HP", "Cartucho de tinta muy caro", 1234, 10),
+      new Producto(5, "Cámara", "Chilango", "valedor", 50, 0),
     ];
+
+    for(let i = 0; i < this.productos.length; i++){
+      this.busquedaProductos.push(this.productos[i]);
+    }    
+
     this.busqueda = "";
     this.existencia = false;
     this.ordenar = false;
@@ -59,6 +69,7 @@ export class S10ProductosComponent implements OnInit {
     if(this.ordenar){
       this.busquedaProductos = this.busquedaProductos.sort((p1, p2) => p2.precio - p1.precio);
     }
+    console.log(this.busquedaProductos.length);
   }
 
   ngOnInit() {
