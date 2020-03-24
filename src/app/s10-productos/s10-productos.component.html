@@ -1,5 +1,5 @@
 <div class="form-group">
-  <input type="text" name="" id="" [(ngModel)]="busqueda">
+  <input type="text" name="" id="" [(ngModel)]="busqueda" (keydown.enter)="onBusqueda()">
   <button (click)="onBusqueda()">Buscar</button>
   <div *ngIf="busqueda.length > 0">
     <small>Busqueda: {{busqueda}}</small>
