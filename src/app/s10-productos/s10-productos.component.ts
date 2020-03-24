@@ -51,6 +51,7 @@ export class S10ProductosComponent implements OnInit {
   }
 
   onBusqueda() {
+    console.log("Busqyeda...", this.existencia, this.ordenar);
     let busquedaUpper = this.busqueda.toUpperCase();
     this.busquedaProductos = this.productos.filter((prod: Producto) => {
       if(prod.nombre.toUpperCase().includes(busquedaUpper) || prod.descripcion.toUpperCase().includes(busquedaUpper)){
