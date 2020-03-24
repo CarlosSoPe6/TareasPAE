@@ -1,4 +1,4 @@
-export class Product {
+export class Producto {
   uid: number;
   nombre: string;
   marca: string;

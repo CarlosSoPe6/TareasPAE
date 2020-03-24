@@ -1,6 +1,35 @@
-<div>
-  <strong>{{producto.nombre}}</strong>
-  <p></p>
-  <p></p>
-
+<div class="form-group">
+  <input type="text" name="" id="" [(ngModel)]="busqueda">
+  <button (click)="onBusqueda">Buscar</button>
+  <div *ngIf="busqueda.length > 0">
+    <small>Busqueda: {{busqueda}}</small>
+  </div>
+  <br>
+  <input type="checkbox" name="" id="existencia" (click)="onExistnacia()">
+  <label for="existecia">Exisencia</label>
+  <br>
+  <input type="checkbox" name="" id="ordenar" (click)="onOrdenar()">
+  <label for="ordenar">Ordenar</label>
+  <br>
+  <input type="checkbox" name="" id="resaltar" (click)="onResaltar()">
+  <label for="resaltar">Resaltar</label>
+</div>
+<div *ngIf="busquedaProductos.length > 0">
+  <div *ngFor="let producto of busquedaProductos">
+    <div class="producto-container">
+      <div class="producto-image-container">
+        <img [src]="producto.imagen">
+      </div>
+      <div class="producto-desc-container">
+        <strong>{{producto.nombre}}</strong>
+        <p>Precio (MXN) ${{producto.precio}}</p>
+        <p>Marca: {{producto.marca}}</p>
+        <small>Descripción: {{producto.descripcion}}</small>
+        <small>Existencia: {{producto.existencia}}</small>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="busquedaProductos.length == 0">
+  No hay resultados.
 </div>
